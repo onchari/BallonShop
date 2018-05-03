@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using BallonShop.Models;
+using BallonShop.Models.ProductViewModel;
 
 namespace BallonShop.Data
 {
@@ -13,6 +14,7 @@ namespace BallonShop.Data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
+            
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -22,5 +24,11 @@ namespace BallonShop.Data
             // For example, you can rename the ASP.NET Identity table names and more.
             // Add your customizations after calling base.OnModelCreating(builder);
         }
+
+        public DbSet<BallonShop.Models.ProductViewModel.MainCategoryViewModel> MainCategoryViewModel { get; set; }
+
+        public DbSet<BallonShop.Models.ProductViewModel.SubCategoryViewModel> SubCategoryViewModel { get; set; }
+
+        public DbSet<BallonShop.Models.ProductViewModel.Products> Product { get; set; }
     }
 }

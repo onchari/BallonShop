@@ -1,0 +1,78 @@
+﻿@model BallonShop.Models.ProductViewModel.Products
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+
+<h4>Products</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="SubCategoryViewModelId" class="control-label"></label>
+                <select asp-for="SubCategoryViewModelId" class ="form-control" asp-items="ViewBag.SubCategoryViewModelId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductName" class="control-label"></label>
+                <input asp-for="ProductName" class="form-control" />
+                <span asp-validation-for="ProductName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductSKUs" class="control-label"></label>
+                <input asp-for="ProductSKUs" class="form-control" />
+                <span asp-validation-for="ProductSKUs" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductMarketPrice" class="control-label"></label>
+                <input asp-for="ProductMarketPrice" class="form-control" />
+                <span asp-validation-for="ProductMarketPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductPrice" class="control-label"></label>
+                <input asp-for="ProductPrice" class="form-control" />
+                <span asp-validation-for="ProductPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductQty" class="control-label"></label>
+                <input asp-for="ProductQty" class="form-control" />
+                <span asp-validation-for="ProductQty" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductInventoryNumber" class="control-label"></label>
+                <input asp-for="ProductInventoryNumber" class="form-control" />
+                <span asp-validation-for="ProductInventoryNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductPhotoUrl" class="control-label"></label>
+                <input asp-for="ProductPhotoUrl" class="form-control" />
+                <span asp-validation-for="ProductPhotoUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProductPublishTime" class="control-label"></label>
+                <input asp-for="ProductPublishTime" class="form-control" />
+                <span asp-validation-for="ProductPublishTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="WhetherRecommended" class="control-label"></label>
+                <input asp-for="WhetherRecommended" class="form-control" />
+                <span asp-validation-for="WhetherRecommended" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,90 @@
+﻿@model IEnumerable<BallonShop.Models.ProductViewModel.Products>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductSKUs)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductMarketPrice)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductPrice)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductQty)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductInventoryNumber)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductPhotoUrl)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProductPublishTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.WhetherRecommended)
+                </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SubCategoryViewModel)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductSKUs)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductMarketPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductQty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductInventoryNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductPhotoUrl)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ProductPublishTime)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WhetherRecommended)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubCategoryViewModel.SubCategoryViewModelId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ProductsId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ProductsId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ProductsId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
